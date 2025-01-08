@@ -102,7 +102,7 @@ public class Fraction{
     }
     
     //simplify method
-    //takes the highest number and uses it in a loop to find the highest common factor between the numerator and denominator
+    //looks for the highest common factor between the numerator and denominator
     public Fraction simplify(Fraction f){
         int num = f.numerator;
         int denom = f.denominator;
