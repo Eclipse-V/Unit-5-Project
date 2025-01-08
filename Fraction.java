@@ -103,27 +103,15 @@ public class Fraction{
     
     //simplify method
     //takes the highest number and uses it in a loop to find the highest common factor between the numerator and denominator
-    public Fraction simplify(Fraction f){ 
-        int highest = 0; 
-        int divisor = 0; 
-        numerator = f.numerator; 
-        denominator = f.denominator; 
-        if(f.numerator > f.denominator){ 
-            highest = f.numerator; 
-        } 
-        else if(f.numerator < f.denominator){ 
-            highest = f.denominator; 
-        } 
-        else{ 
-            highest = f.numerator; 
+    public Fraction simplify(Fraction f){
+        int num = f.numerator;
+        int denom = f.denominator;
+        for (int i = 1; i <= (this.denominator/2); i++){
+            if ((this.denominator % i == 0) && (this.numerator % i == 0)){
+                numerator = f.numerator/i;
+                denominator = f.denominator/i;   
+            }
         }
-        for(int i = 1; i <= highest; i++){ 
-            if(f.numerator % i == 0 && f.denominator % i == 0){ 
-                divisor = i; 
-                numerator = f.numerator / divisor; 
-                denominator = f.denominator / divisor;
-            } 
-        } 
         return new Fraction(numerator, denominator); 
     }
     
